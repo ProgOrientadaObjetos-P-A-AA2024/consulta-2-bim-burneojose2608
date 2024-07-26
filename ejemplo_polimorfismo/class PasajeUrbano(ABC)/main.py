@@ -2,8 +2,6 @@
 
 # Press Shift+F6 to execute it or replace it with your code.
 
-
-
 class PasajeUrbano(ABC):
     
     def __init__(self, pasaje_fijo):
@@ -38,3 +36,12 @@ class PasajeUrbano(ABC):
                 f"Cédula: {self.obtener_persona().obtener_cedula()}\n"
                 f"Valor Pasaje: {self.obtener_valor_pasaje():.2f}\n"
                 "---------------------\n")
+
+
+class PasajeEstudiante(PasajeUrbano):
+    def establecer_valor_pasaje(self):
+        self.valor_pasaje = self.valor_fijo * 0.5  
+
+class PasajeAdultoMayor(PasajeUrbano):
+    def establecer_valor_pasaje(self):
+        self.valor_pasaje = self.valor_fijo * 0.3
